@@ -1,4 +1,4 @@
-#!/Users/KNavarro/FSND/projects/03_coffee_shop_full_stack/starter_code/backend/venv/bin/python3
+#!/Users/KNavarro/Documents/GitHub/capstone-project/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
