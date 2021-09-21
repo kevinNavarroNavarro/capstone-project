@@ -1,12 +1,13 @@
 from flask import Flask, request, jsonify, abort
-from sqlalchemy import exc
 from flask_cors import CORS
+from flask_migrate import Migrate
 
-from .models import Movie_Actor, db_drop_and_create_all, setup_db, Movie, Actor
-from .auth.auth import AuthError, requires_auth
+from .database.models import Movie_Actor, db_drop_and_create_all, setup_db, Movie, Actor, db
+from .controllers.auth import AuthError, requires_auth
 
 app = Flask(__name__)
 setup_db(app)
+migrate = Migrate(app, db)
 CORS(app)
 
 '''
