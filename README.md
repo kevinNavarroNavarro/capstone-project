@@ -1,10 +1,67 @@
-Capstone Project 
+Capstone Project
+This project is created for complete Full Stack Web Developer Nanodegree Program.
 
-- Postman test
-- Endpoints
-- Auth JWT
+The Casting Agency models a company that is responsible for creating movies and managing and assigning actors to those movies. 
 
-Endpoints
+## Getting Started
+
+### Installing Dependencies
+
+#### Python 3.7
+
+Follow instructions to install the latest version of python for your platform in the [python docs](https://docs.python.org/3/using/unix.html#getting-and-installing-the-latest-version-of-python)
+
+#### Virtual Environment
+
+We recommend working within a virtual environment whenever using Python for projects. This keeps your dependencies for each project separate and organized. Instructions for setting up a virtual environment for your platform can be found in the [python docs](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
+
+#### PIP Dependencies
+
+Once you have your virtual environment setup and running, install dependencies by naviging to the `/backend` directory and running:
+
+```bash
+pip install -r requirements.txt
+```
+
+This will install all of the required packages we selected within the `requirements.txt` file.
+
+##### Key Dependencies
+
+- [Flask](http://flask.pocoo.org/) is a lightweight backend microservices framework. Flask is required to handle requests and responses.
+
+- [SQLAlchemy](https://www.sqlalchemy.org/) and [Flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/en/2.x/) are libraries to handle the lightweight sqlite database. Since we want you to focus on auth, we handle the heavy lift for you in `./src/database/models.py`. We recommend skimming this code first so you know how to interface with the Drink model.
+
+- [jose](https://python-jose.readthedocs.io/en/latest/) JavaScript Object Signing and Encryption for JWTs. Useful for encoding, decoding, and verifying JWTS.
+
+## Running the server
+
+From within the `./src` directory first ensure you are working using your created virtual environment.
+
+Each time you open a new terminal session, run:
+
+```bash
+export FLASK_APP=api.py;
+```
+
+To run the server, execute:
+
+```bash
+flask run --reload
+```
+
+The `--reload` flag will detect file changes and restart the server automatically.
+
+
+### Roles
+Casting Assistant
+   Can view actors, movies and movies_actors
+   Token= eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InFOT19OYzZ4UkZWVW9UVzhfaVhCeiJ9.eyJpc3MiOiJodHRwczovL2NhcHN0b25lZm5zZC51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjE0MjU1MDg0NDY3MmMwMDY5NGJlYTlmIiwiYXVkIjoiaW1hZ2UiLCJpYXQiOjE2MzIxOTY0OTMsImV4cCI6MTYzMjI4Mjg5MiwiYXpwIjoicGNNeW5sUFJ6YXp6WmtxWXlxa1RQTm9Xd2RhelZ2OVQiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwiZ2V0Om1vdmllc19hY3RvcnMiXX0.bc11J0i8IqbVAQV9Kre9rLUjQaxRIBku3JZ9Ao6tmY_pBoG5Y4Wa0P7rRHo2ddQFTIK83w6Czaaa5vk7FUdOOE_0QbVfRPpWZO58vB2-kGSK34Dowb6j76WAVz3Y4INN8WWfHYiYOQ4q8-Y-MudBwchq-iQc7Wha2Si89G4UVZ4xasW8Dug3kX8nF5a0dl31YmCgDohwagdxBtg9TWFwdZc4vQi5iOOEkohYa9U3koIYKaZkQAXhv24SkdDf2y88IzVo7xTzdmeQejayRgal3yUEFW_4qaV5mdToeh_TUzKgEIhdBECW2aE6OVz8Tse-DcpnBJvnCdzDpz5gnpscRw
+
+Executive Producer
+   All permissions for get, delete, patch and create
+   Token= eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InFOT19OYzZ4UkZWVW9UVzhfaVhCeiJ9.eyJpc3MiOiJodHRwczovL2NhcHN0b25lZm5zZC51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjE0MjU1MDg0NDY3MmMwMDY5NGJlYTlmIiwiYXVkIjoiaW1hZ2UiLCJpYXQiOjE2MzIxOTY2MjYsImV4cCI6MTYzMjI4MzAyNSwiYXpwIjoicGNNeW5sUFJ6YXp6WmtxWXlxa1RQTm9Xd2RhelZ2OVQiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTptb3ZpZXNfYWN0b3JzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJnZXQ6bW92aWVzX2FjdG9ycyIsInBhdGNoOmFjdG9ycyIsInBvc3Q6YWN0b3JzIiwicG9zdDptb3ZpZXMiLCJwb3N0Om1vdmllc19hY3RvcnMiXX0.KLvJ-c8W4QKvovJPsOklsYktC0A8u9tGOHOV5wbo9oy3T94fNO-mlnnO-W9AaFnr1HbgO5IA-huxlUZq0SATtaiFiLsqP_HWnH-AyRjWcbXGU_LBGzeevIrBmY50DIsgq9PRi5gdjbGRvMFeobs0nllGZmbigOj8V-HwhB4ylLOwewTbHUIREtDA6NNU_sytWCUIU7qkRcoT2W-zoAjjiPs2XSmLyhqlHh5uKYulP6JFe8wmB_JP1dr540yghRbUXvVb9dQpEGKYXoHNhJYxKWAy0pZGUKWXo99dReQf6uzukJBRQudZEc6duTPXWp2H6fKo_Lzr4iVb1rH97TozWA
+
+### Endpoints
 GET '/movies'
 GET '/actors'
 GET '/movies_actors'
