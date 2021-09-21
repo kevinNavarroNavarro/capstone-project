@@ -38,7 +38,7 @@ def db_drop_and_create_all():
 
     actor = Actor(
         name='Agust Hellmans',
-        age= 22,
+        age= 23,
         gender= 'M'
     )
 
