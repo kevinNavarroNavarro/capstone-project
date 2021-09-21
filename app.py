@@ -3,8 +3,8 @@ from flask import Flask, request, jsonify, abort
 from flask_cors import CORS
 from flask_migrate import Migrate
 
-from .models import Movie_Actor, db_drop_and_create_all, setup_db, Movie, Actor, db
-from .auth import AuthError, requires_auth
+from models import Movie_Actor, db_drop_and_create_all, setup_db, Movie, Actor, db
+from auth import AuthError, requires_auth
 
 app = Flask(__name__)
 setup_db(app)
