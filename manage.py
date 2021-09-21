@@ -3,7 +3,7 @@ from flask_migrate import Migrate, MigrateCommand
 from flask_script._compat import text_type
 
 from app import app
-from database.models import db
+from models import db
 
 migrate = Migrate(app, db)
 manager = Manager(app)
